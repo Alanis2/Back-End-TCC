@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCadastrarItensTable extends Migration
+class CreateUsuarioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateCadastrarItensTable extends Migration
      */
     public function up()
     {
-        Schema::create('itens', function (Blueprint $table) {
+        Schema::create('cadastrar_usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('image');
-            $table->string('quantidade');
-            $table->string('descricao');
+            $table->string('perfil');
+            $table->string('email');
+            $table->string('senha');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateCadastrarItensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('itens');
+        Schema::dropIfExists('cadastrar_usuarios');
     }
 }
