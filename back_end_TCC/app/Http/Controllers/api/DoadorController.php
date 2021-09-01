@@ -5,7 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Doador;
-use App\Models\ModelsUsers\CadastrarUsuario;
+use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
 
 use Validator;
@@ -31,8 +31,8 @@ class DoadorController extends Controller
     public function store(Request $request)
     {
 
-        $user = CadastrarUsuario::create([
-            'perfil' =>"DOADOR",
+        $user = Usuario::create([
+            'perfil' => "DOADOR",
             'nome' => $request->nome,
             'email' => $request->email,
             'senha' => Hash::make($request->password)

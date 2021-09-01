@@ -8,18 +8,41 @@ use Illuminate\Database\Eloquent\Model;
 class Instituicao extends Model
 {
     protected $fillable = [
-        'nome',
+        'nomeFantasia',
+        'razaoSocial',
+        'focoInstitucional',
         'CNPJ',
-        'dtFundamento',
+        'bannerImage',
+        'dtFundacao',
         'telefone',
         'rua',
         'numero',
-        'complemneto',
+        'complemento',
         'cidade',
         'estado',
         'CEP',
         'email',
         'senha',
+        'user_id'
     ];
+
+    public function rules()
+    {
+        return[
+            'nomeFantasia' => 'required',
+            'razaoSocial' => 'required',
+            'focoInstitucional' => 'required',
+            'CNPJ'=> 'required|unique:doadors',
+            'dtFundadao'  => 'required',
+            'telefone' => 'required',
+            'rua' => 'required',
+            'numero' => 'required',
+            'complemento' => 'required',
+            'cidade' => 'required',
+            'estado' => 'required',
+            'CEP' => 'required',
+            'user_id' => ''
+        ];
+    }
     use HasFactory;
 }

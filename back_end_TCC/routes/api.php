@@ -7,3 +7,7 @@ Route::apiResource('CadastroItens', 'App\Http\Controllers\api\CadastrarItensCont
 // $this->apiResource('Doador', 'App\Http\Controllers\api\DoadorController');
 
 Route::apiResource('Doador', 'App\Http\Controllers\api\DoadorController');
+
+Route::apiResource('Instituicao', 'App\Http\Controllers\api\InstituicaoController');
+
+Route::apiResource('Login', 'App\Http\Controllers\api\LoginController');
