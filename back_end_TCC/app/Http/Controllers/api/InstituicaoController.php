@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Instituicao;
+use App\Models\User;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +28,7 @@ class InstituicaoController extends Controller
     public function store(Request $request)
     {
 
-        $user = Usuario::create([
+        $user = User::create([
             'perfil' => "Instituicao",
             'nome' => $request->nome,
             'email' => $request->email,

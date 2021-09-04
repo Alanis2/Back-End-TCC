@@ -4,23 +4,19 @@ namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Usuario;
 use App\Http\Controllers\Controller;
-
+use App\Models\User;
 
 class LoginController extends Controller
 {
     public function index()
     {
-        return Usuario::all();
+        return User::all();
     }
 
     public function store(Request $request)
     {
-
-        
-
-        $login = Usuario::where('email', '=', $request->email)
+        $login = User::where('email', '=', $request->email)
                         ->firstOrFail();
 
 
@@ -44,23 +40,20 @@ class LoginController extends Controller
    
     public function show($id)
     {
-        return Usuario::findOrFail($id);
+        return User::findOrFail($id);
     }
-
 
 
     public function update(Request $request, $id)
     {
-        $login = Usuario::findOrFail($id);
+        $login = User::findOrFail($id);
         $login->update($request->all());
     }
 
    
     public function destroy($id)
     {
-        $login = Usuario::findOrFail($id);
+        $login = User::findOrFail($id);
         $login->delete();
-    }
-
-     
+    } 
 }
